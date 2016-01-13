@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
@@ -56,7 +57,7 @@ public class TweenAnimationActivity extends AppCompatActivity {
         mView.startAnimation(animation);
     }
 
-    public void onSet(View view) {
+    public void onSet1(View view) {
         AnimationSet set = new AnimationSet(this, null);
         Animation animation1 = new TranslateAnimation(0f, 200f, 0f, 200f);
         animation1.setDuration(2000);
@@ -71,6 +72,11 @@ public class TweenAnimationActivity extends AppCompatActivity {
         animation2.setRepeatMode(Animation.REVERSE);
         set.addAnimation(animation2);
 
+        mView.startAnimation(set);
+    }
+
+    public void onSet2(View view) {
+        Animation set = AnimationUtils.loadAnimation(this, R.anim.tween_set);
         mView.startAnimation(set);
     }
 }
