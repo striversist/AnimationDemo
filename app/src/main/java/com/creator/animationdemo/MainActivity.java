@@ -20,4 +20,8 @@ public class MainActivity extends AppCompatActivity {
     public void onFrameAnimation(View view) {
         startActivity(new Intent(this, FrameAnimationActivity.class));
     }
+
+    public void onCustomAnimation(View view) {
+        startActivity(new Intent(this, CustomAnimationActivity.class));
+    }
 }
